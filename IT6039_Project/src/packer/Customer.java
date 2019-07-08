@@ -26,7 +26,7 @@ public class Customer {
         this.addresses.add(address);
     }
 
-    // Return name
+    // name
     public String getName() {
         return name;
     }
@@ -34,7 +34,7 @@ public class Customer {
     // Get closest address to depot
     public Address getClosestAddressTo(Depot d) {
 
-        System.out.println("\nDepot:" + d );
+        //System.out.println("\nDepot:" + d );
 
         double bestDistance = Double.MAX_VALUE;
         Address bestAddress = null;
@@ -46,19 +46,18 @@ public class Customer {
             // for each address: get co-ordinates, get distance to depot
             //(Address.getCo).companyDistanceTo(depot co-ordinates)
             double distance = a.getCoordinates().companyDistanceTo(d.getCoordinates());
-            System.out.println("\nAddress distance:" + distance);
+            //System.out.println("\nAddress distance:" + distance);
 
             //compare distances
             if (distance < bestDistance) {
 
-                //System.out.println("Best a:\n" + bestAddress + "Best d:\n" + bestDistance);
                 bestAddress = a;
                 bestDistance = distance;
                 //System.out.println("Best Distance:\n" + bestAddress + "Best d:\n" + bestDistance);
             }
         }
 
-        System.out.println("\nBEST:" + bestAddress);
+        //System.out.println("\nBEST:" + bestAddress);
         return bestAddress;
     }
 

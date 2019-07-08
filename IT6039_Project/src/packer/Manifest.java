@@ -28,7 +28,6 @@ public class Manifest {
 
         if (quantities.containsKey(p)) {
             quantities.put(p,quantities.get(p)+quantity);
-
             //print to check list
             //System.out.println("\n product added, quantities:" + quantities.toString());
 
@@ -50,7 +49,6 @@ public class Manifest {
     // REMOVE product after packed (quantity is 1)
     public void removeProduct(Product p) {
         if (quantities.containsKey(p) && quantities.get(p) > 0) {
-
             quantities.put(p,quantities.get(p)-1); // update product quantity -1
 
             // print to check items removed

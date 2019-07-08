@@ -10,16 +10,16 @@ import java.util.List;
 public class Packer {
 
     // Step 2 PACKING
-    public static List<Box> packProducts(Customer c, Depot d, Manifest m) {
+    public static List<Box> packProducts(Customer c, Depot d, Manifest m, Integer cap) {
 
         List<Box> packedBoxes = new ArrayList<>(); // packed boxes
-        Box b = null; //
+        Box b = null;
 
         while (!m.isEmpty()) { // repeat until all items are packed
             if (b == null) {
 
                 //System.out.println("New Box"); // new box with new manifest
-                b = new Box(c, d);
+                b = new Box(c, d, cap);
             }
 
             // get heaviest item that will fit in remaining capacity

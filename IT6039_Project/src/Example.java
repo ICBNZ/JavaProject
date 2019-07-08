@@ -51,7 +51,9 @@ public class Example {
         System.out.println(manifest);
 
         System.out.println("\nPACKING:");
-        List<Box> done = Packer.packProducts(customer, depot, manifest);
+        int capacity = 30;
+
+        List<Box> done = Packer.packProducts(customer, depot, manifest, capacity);
 
         // Results
         for (Box b : done) {

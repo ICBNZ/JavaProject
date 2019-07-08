@@ -11,15 +11,25 @@ public class Box {
     private Customer customer;
     private Depot depot;
 
-    public Box(Customer customer, Depot depot) {
+    private int capacity;
+
+    public Box(Customer customer, Depot depot, Integer capacity) {
         this.customer = customer;
         this.depot = depot;
+        this.capacity = capacity;
         contents = new Manifest();
     }
 
 
     public String getLabel() {
         StringBuilder label = new StringBuilder();
+
+
+        // print to test box capacity
+        label.append("Capacity:");
+        label.append(capacity);
+
+        label.append("\n");
         label.append(customer);
         label.append("\n");
         label.append(customer.getClosestAddressTo(depot));
@@ -54,11 +64,11 @@ public class Box {
     }
 
     public boolean canFit(Product p) {
-        return p.getWeight() < 20;
+        return p.getWeight() < capacity;
     }
 
     public double remainingCapacity() {
-        return 20 - this.getWeight();
+        return capacity - this.getWeight();
     }
 
     public boolean isFragile() {
