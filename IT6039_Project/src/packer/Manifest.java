@@ -47,7 +47,7 @@ public class Manifest {
     }
 
 
-    // REMOVE product after packed
+    // REMOVE product after packed (quantity is 1)
     public void removeProduct(Product p) {
         if (quantities.containsKey(p) && quantities.get(p) > 0) {
 
@@ -65,7 +65,7 @@ public class Manifest {
             System.out.println("\nRemoved product: " + p + quantities.toString());
 
         }
-        if (quantities.containsKey(p)) {
+        if(quantities.containsKey(p) && quantities.get(p) == 0){
             byWeight.remove(p);
 
             // print to check weights
@@ -98,10 +98,6 @@ public class Manifest {
 
     public boolean isEmpty() {
         return byWeight.isEmpty();
-    }
-
-    public boolean containsProduct(Product p) {
-        return quantities.containsKey(p) && quantities.get(p) > 0;
     }
 
     // Print Manifest
