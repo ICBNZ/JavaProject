@@ -20,6 +20,10 @@ import packer.*;
     DepotTest.class,
     ProductTest.class,
     CustomerTest.class,
+    ManifestTest.class,
+    PackerTest.class,
+    BoxTest.class,
+
 
 })
 
