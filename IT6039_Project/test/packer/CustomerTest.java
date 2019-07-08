@@ -45,23 +45,47 @@ public class CustomerTest {
      */
     @Test
     public void testGetClosestAddressTo() {
+
         // Maybe this should be broken int three tests.
         System.out.println("getClosestAddressTo");
         Customer testCustomer;
-        
+
+        // NEW CUSTOMER
         testCustomer = new Customer("Test Customer", testAddress3);
+
+        System.out.println("\nSEARCHING Add3");
+        System.out.println("\nDepot 1");
         assertEquals(testAddress3, testCustomer.getClosestAddressTo(testDepot0));
+        System.out.println("\nDepot 2");
         assertEquals(testAddress3, testCustomer.getClosestAddressTo(testDepot4));
-        testCustomer.addAddress(testAddress2);
-        assertEquals(testAddress2, testCustomer.getClosestAddressTo(testDepot0));
-        assertEquals(testAddress3, testCustomer.getClosestAddressTo(testDepot4));
+
+        // Add address to Customer's address list, search list
+        System.out.println("\nSEARCHING Add 2 & Add 3");
         testCustomer.addAddress(testAddress1);
+
+        System.out.println("\nDepot 1");
+        assertEquals(testAddress2, testCustomer.getClosestAddressTo(testDepot0));
+        System.out.println("\nDepot 2****");
+        assertEquals(testAddress3, testCustomer.getClosestAddressTo(testDepot4));
+
+
+        System.out.println("Searching Add 2, Add 3 & Add1");
+        testCustomer.addAddress(testAddress2);
+
+        System.out.println("\nDepot 1");
         assertEquals(testAddress1, testCustomer.getClosestAddressTo(testDepot0));
+        System.out.println("\nDepot 2");
         assertEquals(testAddress3, testCustomer.getClosestAddressTo(testDepot4));
-        testCustomer.addAddress(testAddress0);
-        assertEquals(testAddress0, testCustomer.getClosestAddressTo(testDepot0));
-        assertEquals(testAddress3, testCustomer.getClosestAddressTo(testDepot4));
+
         
+        testCustomer.addAddress(testAddress0);
+        System.out.println("\nDepot 1");
+        assertEquals(testAddress0, testCustomer.getClosestAddressTo(testDepot0));
+        System.out.println("\nDepot 2");
+        assertEquals(testAddress3, testCustomer.getClosestAddressTo(testDepot4));
+
+
+        // NEW CUSTOMER
         testCustomer = new Customer("Test Customer", testAddress1);
         assertEquals(testAddress1, testCustomer.getClosestAddressTo(testDepot0));
         assertEquals(testAddress1, testCustomer.getClosestAddressTo(testDepot4));
@@ -74,7 +98,9 @@ public class CustomerTest {
         testCustomer.addAddress(testAddress4);
         assertEquals(testAddress1, testCustomer.getClosestAddressTo(testDepot0));
         assertEquals(testAddress4, testCustomer.getClosestAddressTo(testDepot4));
-        
+
+
+        // NEW CUSTOMER
         testCustomer = new Customer("Test Customer", testAddress2);
         assertEquals(testAddress2, testCustomer.getClosestAddressTo(testDepot0));
         assertEquals(testAddress2, testCustomer.getClosestAddressTo(testDepot4));
@@ -84,6 +110,7 @@ public class CustomerTest {
         testCustomer.addAddress(testAddress1);
         assertEquals(testAddress1, testCustomer.getClosestAddressTo(testDepot0));
         assertEquals(testAddress3, testCustomer.getClosestAddressTo(testDepot4));
+
     }
     
 }
