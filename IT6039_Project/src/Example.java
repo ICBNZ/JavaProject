@@ -21,17 +21,17 @@ import packer.Product;
  * @author bunta
  */
 public class Example {
-    
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+
         Address depotAddress = new Address("23 Good Luck St", "Blue View", "Sandy Shores", "H337", new Coordinates(138, 995));
         Depot depot = new Depot("Main Depot", depotAddress);
         System.out.println("\nDEPOT:");
         System.out.println(depot);
-        
+
         Address customerAddress1 = new Address("67 Torch Rd", "Treeline", "Mt High", "T799", new Coordinates(1102, 87));
         Address customerAddress2 = new Address("88 Camp Mine St", "Ridgeway", "Lowe Valley", "I998", new Coordinates(100, 34));
         Customer customer = new Customer("Andy Bravo", customerAddress1);
@@ -52,13 +52,12 @@ public class Example {
 
         System.out.println("\nPACKING:");
         List<Box> done = Packer.packProducts(customer, depot, manifest);
-        
+
         // Results
         for (Box b : done) {
             System.out.println(b);
         }
-        
+
     }
-    
-    
+
 }

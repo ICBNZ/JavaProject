@@ -5,32 +5,19 @@ package packer;
  * @author I.M.Bad
  */
 public class Box {
-    
-    
+
+
     private Manifest contents;
     private Customer customer;
-    private Depot depot; 
+    private Depot depot;
 
     public Box(Customer customer, Depot depot) {
         this.customer = customer;
         this.depot = depot;
         contents = new Manifest();
     }
-    
-    public void addProduct(Product product) {
-        if (canFit(product)) {
-            contents.addProduct(product, 1);
-        }
-    }
-    
-    
-    
-    public void addProduct(Product product, int quantity) {
-        if (canFit(product,quantity)); {
-            contents.addProduct(product, quantity);
-        }
-    }
-   
+
+
     public String getLabel() {
         StringBuilder label = new StringBuilder();
         label.append(customer);
@@ -44,37 +31,37 @@ public class Box {
         }
         return label.toString();
     }
-    
+
     public String toString() {
         return getLabel();
     }
-    
+
     public double getWeight() {
         return contents.getWeight();
     }
-    
+
     public void addProduct(Product product) {
         if (canFit(product)) {
             contents.addProduct(product, 1);
         }
     }
-    
+
     public boolean canFit(Product p) {
-        return p.getWeight() < 40;
+        return p.getWeight() < 20;
     }
-    
+
     public boolean canFit(Product p, int quantity) {
-        return (p.getWeight() * quantity) < 40;
+        return (p.getWeight() * quantity) < 20;
     }
-    
+
     public double remainingCapacity() {
-        return 40 - this.getWeight();
+        return 20 - this.getWeight();
     }
-    
+
     public boolean isFragile() {
         return contents.hasFragileItems();
     }
-    
+
     public boolean isHazardous() {
         return false;
     }

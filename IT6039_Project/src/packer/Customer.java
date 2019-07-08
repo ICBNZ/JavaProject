@@ -8,7 +8,7 @@ import java.util.List;
  * @author I.M.Bad
  */
 public class Customer {
-    
+
     private String name;
     private List<Address> addresses;
 
@@ -17,11 +17,11 @@ public class Customer {
         this.name = name;
         this.addresses.add(address);
     }
-    
+
     public void addAddress(Address address) {
         this.addresses.add(address);
     }
-    
+
     public String getName() {
         return name;
     }

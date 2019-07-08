@@ -10,7 +10,7 @@ import java.util.TreeSet;
  * @author I.M.Bad
  */
 public class Manifest {
-    
+
     // This tracks the quantity if each product in the manifest
     private Map<Product, Integer> quantities;
     // This keeps a list of all products ordered by weight
@@ -20,26 +20,25 @@ public class Manifest {
         quantities = new HashMap<>();
         byWeight = new TreeSet<>(new ProductWeightComparator());
     }
-    
+
     public void addProduct(Product p) {
-        addProduct(p,1);
+        addProduct(p, 1);
     }
-    
+
     public void addProduct(Product p, int quantity) {
         if (quantities.containsKey(p)) {
-            quantities.put(p,quantities.get(p)*quantity);
-        }
-        else {
-            quantities.put(p,quantity);
-            if(!byWeight.add(p)) {
+            quantities.put(p, quantities.get(p) * quantity);
+        } else {
+            quantities.put(p, quantity);
+            if (!byWeight.add(p)) {
                 System.out.println("Couldn't add to Set");
             }
         }
     }
-    
+
     public void removeProduct(Product p) {
         if (quantities.containsKey(p) && quantities.get(p) > 0) {
-            quantities.put(p,quantities.get(p)-1);
+            quantities.put(p, quantities.get(p) - 1);
         }
         if (quantities.get(p) == 0) {
             quantities.remove(p);
@@ -48,7 +47,7 @@ public class Manifest {
             byWeight.remove(p);
         }
     }
-    
+
     public double getTotalWeight() {
         double weight = 0;
         for (Product p : quantities.keySet()) {
@@ -56,7 +55,7 @@ public class Manifest {
         }
         return weight;
     }
-    
+
     public Product getHeaviestUnder(double weight) {
         for (Product p : byWeight) {
             if (p.getWeight() <= weight) {
@@ -65,15 +64,15 @@ public class Manifest {
         }
         return null;
     }
-    
+
     public boolean isEmpty() {
         return byWeight.isEmpty();
     }
-    
+
     public boolean containsProduct(Product p) {
         return quantities.containsKey(p) && quantities.get(p) > 0;
     }
-    
+
     public String toString() {
         StringBuilder result = new StringBuilder();
         for (Product p : quantities.keySet()) {
@@ -82,9 +81,9 @@ public class Manifest {
             result.append(quantities.get(p));
             result.append("\n");
         }
-        return result.substring(0, result.length()-1);
+        return result.substring(0, result.length() - 1);
     }
-    
+
     public boolean hasFragileItems() {
         for (Product p : quantities.keySet()) {
             if (p.isFragile()) {
@@ -93,5 +92,5 @@ public class Manifest {
         }
         return false;
     }
-    
 
+}
