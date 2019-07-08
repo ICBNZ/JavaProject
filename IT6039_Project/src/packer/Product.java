@@ -22,6 +22,7 @@ public class Product {
      * @return the weight
      */
     public int getWeight() {
+
         return weight;
     }
 
@@ -29,6 +30,7 @@ public class Product {
      * @return the name
      */
     public String getName() {
+
         return name;
     }
 
@@ -36,19 +38,24 @@ public class Product {
      * @return the hazardous
      */
     public boolean isHazardous() {
-        return false;
+
+        return hazardous;
     }
 
     /**
      * @return the fragile
      */
     public boolean isFragile() {
+
         return fragile;
     }
 
+
     public String toString() {
+
         return this.getName();
     }
+
 
     public boolean equals(Object o) {
         if (!(o instanceof Product)) {

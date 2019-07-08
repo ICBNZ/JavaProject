@@ -37,7 +37,7 @@ public class Box {
     }
 
     public double getWeight() {
-        return contents.getWeight();
+        return contents.getTotalWeight();
     }
 
     public void addProduct(Product product) {
