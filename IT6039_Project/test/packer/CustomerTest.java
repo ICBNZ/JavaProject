@@ -77,7 +77,7 @@ public class CustomerTest {
         System.out.println("\nDepot 2");
         assertEquals(testAddress3, testCustomer.getClosestAddressTo(testDepot4));
 
-        
+
         testCustomer.addAddress(testAddress0);
         System.out.println("\nDepot 1");
         assertEquals(testAddress0, testCustomer.getClosestAddressTo(testDepot0));
