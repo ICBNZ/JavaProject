@@ -18,7 +18,7 @@ public class Packer {
         while (!m.isEmpty()) { // repeat until all items are packed
             if (b == null) {
 
-                System.out.println("New Box"); // new box with new manifest
+                //System.out.println("New Box"); // new box with new manifest
                 b = new Box(c, d);
             }
 
@@ -39,7 +39,7 @@ public class Packer {
         if (b != null) {
             packedBoxes.add(b);
         }
-            System.out.println("Packed:" + packedBoxes);
+            //System.out.println("Packed:" + packedBoxes);
             return packedBoxes;
 
     }
