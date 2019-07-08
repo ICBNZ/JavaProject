@@ -11,6 +11,13 @@ public class Product {
     private boolean hazardous;
     private boolean fragile;
 
+    /**
+     *
+     * @param name - Product name
+     * @param weight - Product weight
+     * @param hazardous - if Product is hazardous true or false
+     * @param fragile - if Product is fragile true or false
+     */
     public Product(String name, int weight, boolean hazardous, boolean fragile) {
         this.name = name;
         this.weight = weight;
@@ -19,7 +26,7 @@ public class Product {
     }
 
     /**
-     * @return the weight
+     * @return Product weight
      */
     public int getWeight() {
 
@@ -27,7 +34,7 @@ public class Product {
     }
 
     /**
-     * @return the name
+     * @return Product name
      */
     public String getName() {
 
@@ -35,7 +42,7 @@ public class Product {
     }
 
     /**
-     * @return the hazardous
+     * @return hazardous true or false
      */
     public boolean isHazardous() {
 
@@ -43,19 +50,12 @@ public class Product {
     }
 
     /**
-     * @return the fragile
+     * @return fragile true or false
      */
     public boolean isFragile() {
 
         return fragile;
     }
-
-
-    public String toString() {
-
-        return this.getName();
-    }
-
 
     public boolean equals(Object o) {
         if (!(o instanceof Product)) {

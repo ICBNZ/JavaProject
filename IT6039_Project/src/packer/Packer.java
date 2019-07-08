@@ -9,7 +9,14 @@ import java.util.List;
  */
 public class Packer {
 
-    // Step 2 PACKING
+    /**
+     * Packer: Packs products to boxes within box capacity
+     * @param c - Customer
+     * @param d - Depot
+     * @param m - Manifest
+     * @param cap - Box Capacity
+     * @return list of packed boxes
+     */
     public static List<Box> packProducts(Customer c, Depot d, Manifest m, Integer cap) {
 
         List<Box> packedBoxes = new ArrayList<>(); // packed boxes
