@@ -6,11 +6,7 @@
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-import packer.AddressTest;
-import packer.CoordinatesTest;
-import packer.CustomerTest;
-import packer.DepotTest;
-import packer.ProductTest;
+import packer.*;
 
 
 /**
@@ -23,7 +19,8 @@ import packer.ProductTest;
     AddressTest.class,
     DepotTest.class,
     ProductTest.class,
-    CustomerTest.class
+    CustomerTest.class,
+
 })
 
 public class TestSuite {

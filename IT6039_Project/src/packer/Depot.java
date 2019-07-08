@@ -14,7 +14,7 @@ public class Depot {
     }
 
     public String getName() {
-        return address.toString();
+        return name;
     }
 
     public Coordinates getCoordinates() {
@@ -22,7 +22,8 @@ public class Depot {
     }
 
     public String toString() {
-        return this.getName();
+        return
+                (this.getName() + "\n" + address);
     }
 
 }

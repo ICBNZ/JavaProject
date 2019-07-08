@@ -18,7 +18,7 @@ import org.junit.BeforeClass;
 public class CoordinatesTest {
     
     // If distances are in km, then results can be off by up to 1m
-    public static final double ACCEPTABLE_DELTA = 0.001; 
+    public static final double ACCEPTABLE_DELTA = 0.001;
     
     // Test data
     Coordinates testCoordinates1 = new Coordinates(0,0);
