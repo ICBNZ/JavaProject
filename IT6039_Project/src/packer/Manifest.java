@@ -27,7 +27,7 @@ public class Manifest {
     public void addProduct(Product p, int quantity) {
 
         if (quantities.containsKey(p)) {
-            quantities.put(p,quantities.get(p)*quantity);
+            quantities.put(p,quantities.get(p)+quantity);
 
             //print to check list
             System.out.println("\n product added, quantities:" + quantities.toString());
@@ -77,7 +77,7 @@ public class Manifest {
     public double getTotalWeight() {
         double weight = 0;
         for (Product p : quantities.keySet()) {
-            weight = (quantities.get(p) * p.getWeight());
+            weight += (quantities.get(p) * p.getWeight());
 
         }
         // print to check total weight
@@ -119,6 +119,15 @@ public class Manifest {
     public boolean hasFragileItems() {
         for (Product p : quantities.keySet()) {
             if (p.isFragile()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean hasHazardousItems() {
+        for (Product p : quantities.keySet()) {
+            if (p.isHazardous()) {
                 return true;
             }
         }

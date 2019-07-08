@@ -29,6 +29,9 @@ public class Box {
         if (this.isFragile()) {
             label.append("FRAGILE\n");
         }
+        else if (this.isHazardous()) {
+            label.append("HAZARDOUS\n");
+        }
         return label.toString();
     }
 
@@ -63,6 +66,6 @@ public class Box {
     }
 
     public boolean isHazardous() {
-        return false;
+        return contents.hasHazardousItems();
     }
 }
