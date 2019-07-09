@@ -12,7 +12,12 @@ public class Customer {
     private String name;
     private List<Address> addresses;
 
-    // Customer name, address/addresses
+
+    /**
+     * Customer
+     * @param name Customer's name
+     * @param address List of Customer's addresses
+     */
     public Customer(String name, Address address) {
 
         addresses = new ArrayList<>();
@@ -21,17 +26,30 @@ public class Customer {
         this.addresses.add(address);
     }
 
-    // Add addresses to address list
+
+    /**
+     * Add Address: Adds Customer addresses to list
+     * @param address Customer address
+     */
     public void addAddress(Address address) {
         this.addresses.add(address);
     }
 
-    // name
+
+    /**
+     * Get Name
+     * @return Customer's name
+     */
     public String getName() {
         return name;
     }
 
-    // Get closest address to depot
+
+    /**
+     * Closest Address To: Gets the Customer's closest address to the depot
+     * @param d Depot
+     * @return bestAddress: closest Customer address
+     */
     public Address getClosestAddressTo(Depot d) {
 
         //System.out.println("\nDepot:" + d );
@@ -61,6 +79,10 @@ public class Customer {
         return bestAddress;
     }
 
+    /**
+     * Customer name
+     * @return name
+     */
     public String toString() {
         return this.getName();
     }
