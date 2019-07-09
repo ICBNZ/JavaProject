@@ -41,7 +41,6 @@ public class Manifest {
             //print to check list
             //System.out.println("\n product added, quantities:" + quantities.toString());
 
-
         } else {
 
             quantities.put(p, quantity);
@@ -54,9 +53,6 @@ public class Manifest {
             }
         }
     }
-
-
-    // REMOVE product after packed (quantity is 1)
 
     /**
      * Remove Product: Reduces quantity of product by 1 once packed
@@ -87,8 +83,6 @@ public class Manifest {
         }
     }
 
-    // Get Weight
-
     /**
      * Get Total Weight: Returns the sum of weights of all products x quantities
      * @return total weight
@@ -107,7 +101,7 @@ public class Manifest {
     /**
      * Get Heaviest Under: Returns heaviest item left in list to be packed
      * @param weight - remaining capacity of box
-     * @return product that will fit, otherwise null
+     * @return p: product that will fit, otherwise null
      */
     public Product getHeaviestUnder(double weight) {
         for (Product p : byWeight) {
@@ -127,10 +121,8 @@ public class Manifest {
         return byWeight.isEmpty();
     }
 
-    // Print Manifest
-
     /**
-     * Result String: Returns a string of list of products and quantities
+     * Result String: Returns a string list of products and quantities
      * @return results
      */
     public String toString() {

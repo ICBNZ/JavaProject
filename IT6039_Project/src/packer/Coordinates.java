@@ -22,6 +22,12 @@ public class Coordinates {
         return y;
     }
 
+
+    /**
+     * Euclidean Distance: Calculates euclidean distance between co-ordinates
+     * @param other
+     * @return distance
+     */
     public double euclideanDistanceTo(Coordinates other) {
         double xDiff = other.getX() - this.getX();
         double yDiff = other.getY() - this.getY();
@@ -29,6 +35,12 @@ public class Coordinates {
         return dist;
     }
 
+
+    /**
+     * Manhattan Distance: Calculates manhattan distance between co-ordinates
+     * @param other
+     * @return distance
+     */
     public double manhattanDistanceTo(Coordinates other) {
         double xDiff = other.getX() - this.getX();
         double yDiff = other.getY() - this.getY();
@@ -36,6 +48,12 @@ public class Coordinates {
         return dist;
     }
 
+    /**
+     * Company Distance To: Calculates the euclidean and manhattan distances between co-ordinates
+     * and finds average distance from Customer's address to Depot
+     * @param other
+     * @return average of both distances
+     */
     public double companyDistanceTo(Coordinates other) {
         double dist1 = euclideanDistanceTo(other);
         double dist2 = manhattanDistanceTo(other);

@@ -11,6 +11,14 @@ public class Address {
     private String postcode;
     private Coordinates coordinates;
 
+    /**
+     * Address:
+     * @param street
+     * @param suburb
+     * @param city
+     * @param postcode
+     * @param coordinates
+     */
     public Address(String street, String suburb, String city, String postcode, Coordinates coordinates) {
         this.street = street;
         this.suburb = suburb;
@@ -33,5 +41,4 @@ public class Address {
         return coordinates;
     }
 
-    
 }
