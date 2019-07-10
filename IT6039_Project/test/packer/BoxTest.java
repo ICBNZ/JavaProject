@@ -4,6 +4,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
 
+import static org.junit.Assert.assertThat;
+import static org.hamcrest.CoreMatchers.containsString;
+
 /**
  *
  * @author Isla
@@ -19,7 +22,7 @@ public class BoxTest {
     Product p1 = new Product("Saw", 4, true, false);
     Product p2 = new Product("Ladder", 10, true, false);
     Product p3 = new Product("Product1", 22, false, false);
-    Product p4 = new Product("Product2", 10, true, false);
+    Product p4 = new Product("Toolbox", 10, true, false);
     Product p5 = new Product("LightBulbs", 2, false, true);
 
     @BeforeClass
@@ -34,14 +37,40 @@ public class BoxTest {
     @Test
     public void testCanFit() {
 
-        System.out.println("canFit: ");
+        System.out.println("Can Fit");
 
-        Box b1 = new Box(testC1, testD1, 20);
+        Box b1 = new Box(testC1, testD1, 10);
         b1.addProduct(p1);
         assertTrue(b1.canFit(p1));
         assertTrue(b1.canFit(p2));
         assertFalse(b1.canFit(p3));
         assertTrue(b1.canFit(p4));
+
+    }
+
+    /**
+     * Testing of addProduct method of Box class.
+     */
+    @Test
+    public void addProduct() {
+
+        System.out.println("Add Product");
+
+        Box b1 = new Box(testC1, testD1, 20);
+        b1.addProduct(p1);
+
+        assertThat(b1.getLabel(), containsString(p1.getName()));
+
+        b1.addProduct(p2);
+        assertThat(b1.getLabel(), containsString(p2.getName()));
+
+        // too large
+        b1.addProduct(p3);
+        assertFalse(b1.getLabel().contains(p3.getName()));
+
+        // capacity exceeded
+        b1.addProduct(p4);
+        assertFalse(b1.getLabel().contains(p4.getName()));
 
     }
 
@@ -52,7 +81,7 @@ public class BoxTest {
     @Test
     public void testGetWeight() {
 
-        System.out.println("Weight: ");
+        System.out.println("Get Weight");
 
         Box b1 = new Box(testC1, testD1, 20);
 
@@ -74,7 +103,7 @@ public class BoxTest {
     @Test
     public void testRemainingCapacity() {
 
-        System.out.println("remainingCapacity: ");
+        System.out.println("Remaining Capacity");
 
         Box b1 = new Box(testC1, testD1, 20);
 
@@ -86,4 +115,7 @@ public class BoxTest {
         assertEquals(4, b1.remainingCapacity(), 0);
 
     }
+
+
+
 }
