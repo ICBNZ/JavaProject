@@ -113,6 +113,7 @@ public class Box {
         return contents.hasFragileItems();
     }
 
+
     /**
      * Hazardous: Returns true if product is hazardous
      * @return true or false
