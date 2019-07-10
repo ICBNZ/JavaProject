@@ -22,7 +22,7 @@ public class BoxTest {
     Product p1 = new Product("Saw", 4, true, false);
     Product p2 = new Product("Ladder", 10, true, false);
     Product p3 = new Product("Product1", 22, false, false);
-    Product p4 = new Product("Toolbox", 6, true, false);
+    Product p4 = new Product("Toolbox", 10, true, false);
     Product p5 = new Product("LightBulbs", 2, false, true);
 
     @BeforeClass
@@ -39,9 +39,10 @@ public class BoxTest {
 
         System.out.println("Can Fit");
 
-        Box b1 = new Box(testC1, testD1, 14);
+        Box b1 = new Box(testC1, testD1, 10);
         b1.addProduct(p1);
         assertTrue(b1.canFit(p1));
+        assertTrue(b1.canFit(p2));
         assertFalse(b1.canFit(p3));
         assertTrue(b1.canFit(p4));
 
@@ -67,6 +68,9 @@ public class BoxTest {
         b1.addProduct(p3);
         assertFalse(b1.getLabel().contains(p3.getName()));
 
+        // capacity exceeded
+        b1.addProduct(p4);
+        assertFalse(b1.getLabel().contains(p4.getName()));
 
     }
 
@@ -111,6 +115,7 @@ public class BoxTest {
         assertEquals(4, b1.remainingCapacity(), 0);
 
     }
+
 
 
 }
