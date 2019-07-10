@@ -51,7 +51,7 @@ public class Example {
         System.out.println(manifest);
 
         System.out.println("\nPACKING:");
-        int capacity = 30;
+        int capacity = 20;
 
         List<Box> done = Packer.packProducts(customer, depot, manifest, capacity);
 

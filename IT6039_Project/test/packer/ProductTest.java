@@ -32,7 +32,9 @@ public class ProductTest {
         System.out.println("Testing Product class...");
     }
 
-
+    /**
+     * Testing of Equals method of Product class.
+     */
     @Test
     public void testEquals() {
         assertEquals(true, a1.equals(a1));
@@ -50,6 +52,10 @@ public class ProductTest {
         assertEquals(false, b4.equals(a4)); 
     }
 
+
+    /**
+     * Testing of getWeight method of Product class.
+     */
     @Test
     public void testGetWeight() {
         assertEquals(2, a2.getWeight());
@@ -57,12 +63,20 @@ public class ProductTest {
         assertEquals(4, a4.getWeight());
     }
 
+
+    /**
+     * Testing of isHazardous method of Product class.
+     */
     @Test
     public void testIsHazardous() {
         assertEquals(true,a1.isHazardous());
         assertEquals(false,a3.isHazardous());
     }
 
+
+    /**
+     * Testing of isFragile method of Product class.
+     */
     @Test
     public void testIsFragile() {
         assertEquals(true,a1.isFragile());

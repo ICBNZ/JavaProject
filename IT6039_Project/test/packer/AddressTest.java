@@ -27,7 +27,8 @@ public class AddressTest {
     public static void setUpClass() {
         System.out.println("Testing Address class...");
     }
-    
+
+
     /**
      * Test of toString method, of class Address.
      */

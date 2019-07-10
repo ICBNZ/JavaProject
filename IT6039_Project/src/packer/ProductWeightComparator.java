@@ -9,7 +9,12 @@ import java.util.Comparator;
  * This is used when we need to sort by product weight descending
  */
 public class ProductWeightComparator implements Comparator<Product> {
-
+    /**
+     * Compare: Compares weight of two products
+     * @param a Product a
+     * @param b Product b
+     * @return
+     */
     public int compare(Product a, Product b) {
         if (a.getWeight() < b.getWeight()) {return 1;}
         else if (a.getWeight() > b.getWeight()) {return -1;}

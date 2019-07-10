@@ -93,7 +93,7 @@ public class Box {
      * @return true or false
      */
     public boolean canFit(Product p) {
-        return p.getWeight() < remainingCapacity();
+        return p.getWeight() < capacity;
     }
 
 
@@ -104,7 +104,6 @@ public class Box {
     public double remainingCapacity() {
         return capacity - this.getWeight();
     }
-
 
     /**
      * Fragile: Returns true if product is fragile
