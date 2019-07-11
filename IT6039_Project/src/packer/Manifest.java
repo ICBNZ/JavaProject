@@ -1,9 +1,6 @@
 package packer;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 /**
  *
@@ -12,7 +9,7 @@ import java.util.TreeSet;
 public class Manifest {
 
     // This tracks the quantity of each product in the manifest
-    private Map<Product, Integer> quantities;
+    private LinkedHashMap<Product, Integer> quantities;
 
     // This keeps a list of all products ordered by weight
     private Set<Product> byWeight;
@@ -24,7 +21,7 @@ public class Manifest {
      * TreeSet of Products by weight, ordered with ProductWeightComparator
      */
     public Manifest() {
-        quantities = new HashMap<>();
+        quantities = new LinkedHashMap<>();
         byWeight = new TreeSet<>(new ProductWeightComparator());
     }
 
@@ -126,12 +123,16 @@ public class Manifest {
      * @return results
      */
     public String toString() {
+
         StringBuilder result = new StringBuilder();
+
         for (Product p : quantities.keySet()) {
+
             result.append(p.getName());
             result.append(" x ");
             result.append(quantities.get(p));
             result.append("\n");
+
         }
         return result.substring(0, result.length()-1);
     }

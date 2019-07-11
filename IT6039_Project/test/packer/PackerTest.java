@@ -53,7 +53,7 @@ public class PackerTest {
         testManifest1.addProduct(p1, 1);
 
         List<Box> results1 = Packer.packProducts(customer1, testDepot1, testManifest1, 20);
-
+        System.out.println("Packed Boxes1" + results1);
         assertTrue( results1.size() == 1);
         assertThat(results1.get(0).toString(), containsString(
                 "Capacity:20\n" +
@@ -62,8 +62,8 @@ public class PackerTest {
                         "Christly\n" +
                         "Holly Oaks\n" +
                         "C333\n" +
-                        "Hammer x 1\n" +
                         "Ladder x 1\n" +
+                        "Hammer x 1\n" +
                         "HEAVY"));
 
         // Packing Manifest 2
@@ -75,8 +75,9 @@ public class PackerTest {
         testManifest2.addProduct(p3, 3);
 
         List<Box> results2 = Packer.packProducts(customer2, testDepot1, testManifest2, 20);
-
+        System.out.println("Packed Boxes2" + results2);
         assertTrue( results2.size() == 3);
+
         assertThat(results2.get(0).toString(), containsString(
                 "Capacity:20\n" +
                         "Craig Smith\n" +
@@ -84,9 +85,9 @@ public class PackerTest {
                         "Somewhere\n" +
                         "Elsewhere\n" +
                         "E555\n" +
-                        "Nails x 2\n" +
-                        "Hammer x 1\n" +
                         "Ladder x 1\n" +
+                        "Hammer x 1\n" +
+                        "Nails x 2\n" +
                         "HEAVY"));
 
         assertThat(results2.get(1).toString(), containsString(
@@ -96,9 +97,9 @@ public class PackerTest {
                         "Somewhere\n" +
                         "Elsewhere\n" +
                         "E555\n" +
-                        "Nails x 1\n" +
-                        "Hammer x 1\n" +
                         "Ladder x 1\n" +
+                        "Hammer x 1\n" +
+                        "Nails x 1\n" +
                         "HEAVY"));
 
         assertThat(results2.get(2).toString(), containsString(
@@ -140,9 +141,9 @@ public class PackerTest {
                         "Somewhere\n" +
                         "Elsewhere\n" +
                         "E555\n" +
-                        "Light Bulbs x 1\n" +
-                        "Weedkiller x 2\n" +
                         "Saw x 2\n" +
+                        "Weedkiller x 2\n" +
+                        "Light Bulbs x 1\n" +
                         "FRAGILE"));
 
         assertFalse(results3.get(2).toString().contains(
