@@ -2,7 +2,8 @@ package packer;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
-import org.junit.BeforeClass;
+import org.junit.Before;
+
 
 /**
  *
@@ -24,9 +25,27 @@ public class ManifestTest {
     Product p5 = new Product("Light Bulbs", 1, false, true);
     Product p6 = new Product("Weedkiller", 2, true, false);
 
-    @BeforeClass
-    public static void setUpClass() {
-        System.out.println("Testing Box class...");
+    private Manifest testManifest1;
+    private Manifest testManifest2;
+    private Manifest testManifest3;
+
+    @Before
+    public void setUpClass() {System.out.println("Testing Box class...");
+
+        testManifest1 = new Manifest();
+        testManifest1.addProduct(p2, 4);
+        testManifest1.addProduct(p5, 2);
+
+        testManifest2 = new Manifest();
+        testManifest2.addProduct(p6, 2);
+        testManifest2.addProduct(p1, 1);
+        testManifest2.addProduct(p4, 10);
+
+        testManifest3 = new Manifest();
+        testManifest3.addProduct(p4, 1);
+        testManifest3.addProduct(p2, 10);
+        testManifest3.addProduct(p3, 2);
+        testManifest3.addProduct(p6, 20);
     }
 
 
@@ -35,33 +54,37 @@ public class ManifestTest {
      */
     @Test
     public void addProduct() {
-        Manifest testManifest1;
-        testManifest1 = new Manifest();
-        testManifest1.addProduct(p2, 4);
-        testManifest1.addProduct(p1, 10);
-        assertEquals("Ladder x 4\n" + "Hammer x 10", testManifest1.toString());
 
-        Manifest testManifest2;
-        testManifest2 = new Manifest();
-        testManifest2.addProduct(p1, 1);
-        testManifest2.addProduct(p4, 2);
-        testManifest2.addProduct(p5, 4);
-        assertEquals("Hammer x 1\n" +
-                "Saw x 2\n" +
-                "Light Bulbs x 4", testManifest2.toString());
-
-
-
-
+        assertEquals("Ladder x 4\n" +
+                "Light Bulbs x 2", testManifest1.toString());
+        assertEquals("Weedkiller x 2\n" + "Hammer x 1\n" +
+                        "Saw x 10", testManifest2.toString());
+        assertEquals("Saw x 1\n" + "Ladder x 10\n" + "Nails x 2\n" +
+                        "Weedkiller x 20", testManifest3.toString());
     }
+
 
     /**
      * Testing of removeProduct method of Manifest Class.
      */
     @Test
     public void removeProduct() {
-        //Parameters:m Product
 
+        testManifest1.removeProduct(p1);
+        assertEquals("Ladder x 4\n" + "Light Bulbs x 2",
+                testManifest1.toString());
+        testManifest1.removeProduct(p2);
+        assertEquals("Ladder x 3\n" + "Light Bulbs x 2",
+                testManifest1.toString());
+
+
+        testManifest2.removeProduct(p4);
+        assertEquals("Weedkiller x 2\n" + "Hammer x 1\n" +
+                "Saw x 9", testManifest2.toString());
+
+        testManifest2.removeProduct(p5);
+        assertEquals("Weedkiller x 2\n" + "Hammer x 1\n" +
+                "Saw x 9", testManifest2.toString());
     }
 
 
@@ -71,28 +94,31 @@ public class ManifestTest {
     @Test
     public void getTotalWeight() {
 
+        assertEquals(62, testManifest1.getTotalWeight(), 0);
+        assertEquals(57, testManifest2.getTotalWeight(), 0);
+        assertEquals(197, testManifest3.getTotalWeight(), 0);
+
     }
 
 
-    /**
 
     @Test
     public void getHeaviestUnder() {
 
     }
 
-    // Get Heaviest Under
+
     @Test
     public void hasFragileItems() {
 
     }
 
-    // Get Heaviest Under
+
     @Test
     public void hasHazardousItems() {
 
     }
-    **/
+
 
 
 }
