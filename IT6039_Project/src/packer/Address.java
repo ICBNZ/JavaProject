@@ -11,13 +11,14 @@ public class Address {
     private String postcode;
     private Coordinates coordinates;
 
+
     /**
-     * Address:
-     * @param street
-     * @param suburb
-     * @param city
-     * @param postcode
-     * @param coordinates
+     * Address of the Customer or Depot
+     * @param street the street
+     * @param suburb the suburb
+     * @param city the city
+     * @param postcode the postcode
+     * @param coordinates the x and y co-ordinates
      */
     public Address(String street, String suburb, String city, String postcode, Coordinates coordinates) {
         this.street = street;
@@ -27,6 +28,11 @@ public class Address {
         this.coordinates = coordinates;
     }
 
+
+    /**
+     * To String method Returns string of address
+     * @return the street, suburb, city and postcode of the address
+     */
     public String toString() {
         return 
                 street + "\n" +
@@ -34,8 +40,11 @@ public class Address {
                 city + "\n" +
                 postcode;
     }
+
+
     /**
-     * @return the coordinates
+     * Get Co-ordinates
+     * @return the address coordinates
      */
     public Coordinates getCoordinates() {
         return coordinates;

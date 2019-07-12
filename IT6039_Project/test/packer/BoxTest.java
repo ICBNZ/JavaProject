@@ -29,13 +29,11 @@ public class BoxTest {
     Product p4 = new Product("Toolbox", 6, true, false);
     Product p5 = new Product("LightBulbs", 2, false, true);
 
-
     Box b1 = new Box(testC1, testD1, 20);
     Box b2 = new Box(testC2, testD1, 30);
 
     @BeforeClass
-    public static void setUpClass() {
-        System.out.println("Testing Box class...");
+    public static void setUpClass() { System.out.println("Testing Box class...");
 
     }
 

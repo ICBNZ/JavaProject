@@ -40,6 +40,7 @@ public class AddressTest {
         assertEquals("321 Back St\nChristly\nHolly Oaks\nC333", testAddress3.toString());
     }
 
+
     /**
      * Test of getCoordinates method, of class Address.
      */

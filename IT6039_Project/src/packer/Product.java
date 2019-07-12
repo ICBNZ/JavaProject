@@ -12,7 +12,7 @@ public class Product {
     private boolean fragile;
 
     /**
-     *
+     * Product on the manifest list to be packed
      * @param name - Product name
      * @param weight - Product weight
      * @param hazardous - if Product is hazardous true or false
@@ -25,23 +25,29 @@ public class Product {
         this.fragile = fragile;
     }
 
+
     /**
-     * @return Product weight
+     * Get Weight: Returns the product's weight
+     * @return weight
      */
     public int getWeight() {
 
         return weight;
     }
 
+
     /**
-     * @return Product name
+     * Get Name: Returns the product's name
+     * @return name
      */
     public String getName() {
 
         return name;
     }
 
+
     /**
+     * Is Hazardous: returns whether or not the product is hazardous
      * @return hazardous true or false
      */
     public boolean isHazardous() {
@@ -49,20 +55,14 @@ public class Product {
         return hazardous;
     }
 
+
     /**
+     * Is Fragile: returns whether or not the product is
      * @return fragile true or false
      */
     public boolean isFragile() {
 
         return fragile;
-    }
-
-    public boolean equals(Object o) {
-        if (!(o instanceof Product)) {
-            return false;
-        }
-        Product p = (Product)o;
-        return p.getName().equals(this.getName());
     }
 
 }

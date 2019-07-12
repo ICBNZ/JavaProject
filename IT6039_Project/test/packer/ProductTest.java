@@ -31,27 +31,7 @@ public class ProductTest {
     public static void setUpClass() {
         System.out.println("Testing Product class...");
     }
-
-    /**
-     * Testing of Equals method of Product class.
-     */
-    @Test
-    public void testEquals() {
-        assertEquals(true, a1.equals(a1));
-        assertEquals(true, a2.equals(a1));
-        assertEquals(true, a3.equals(a1));
-        assertEquals(true, a4.equals(a1));
-
-        assertEquals(false, b1.equals(a1));
-        assertEquals(false, b2.equals(a1));
-        assertEquals(false, b3.equals(a1));
-        assertEquals(false, b4.equals(a1));
-        
-        assertEquals(false, b2.equals(a2));
-        assertEquals(false, b3.equals(a3));
-        assertEquals(false, b4.equals(a4)); 
-    }
-
+    
 
     /**
      * Testing of getWeight method of Product class.

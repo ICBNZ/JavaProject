@@ -12,10 +12,6 @@ import org.junit.Before;
 public class ManifestTest {
 
     // Test data
-    Coordinates testCoordinates1 = new Coordinates(3,4);
-    Address testAddress1 = new Address("1 First St", "", "Citadel City", "A111", testCoordinates1);
-    Customer testCustomer1 = new Customer("Sally Perry", (testAddress1));
-    Depot testDepot1 = new Depot("Test Depot", testAddress1);
 
     // Products
     Product p1 = new Product("Hammer", 3, false, false);
@@ -30,7 +26,7 @@ public class ManifestTest {
     private Manifest testManifest3;
 
     @Before
-    public void setUpClass() {System.out.println("Testing Box class...");
+    public void setUpClass() {
 
         testManifest1 = new Manifest();
         testManifest1.addProduct(p2, 4);
@@ -55,10 +51,14 @@ public class ManifestTest {
     @Test
     public void addProduct() {
 
+        System.out.println("Testing Box class...");
+        // Manifest 1
         assertEquals("Ladder x 4\n" +
                 "Light Bulbs x 2", testManifest1.toString());
+        // Manifest 2
         assertEquals("Weedkiller x 2\n" + "Hammer x 1\n" +
                         "Saw x 10", testManifest2.toString());
+        // Manifest 3
         assertEquals("Saw x 1\n" + "Ladder x 10\n" + "Nails x 2\n" +
                         "Weedkiller x 20", testManifest3.toString());
     }
@@ -70,6 +70,7 @@ public class ManifestTest {
     @Test
     public void removeProduct() {
 
+        // Manifest 1
         testManifest1.removeProduct(p1);
         assertEquals("Ladder x 4\n" + "Light Bulbs x 2",
                 testManifest1.toString());
@@ -77,14 +78,25 @@ public class ManifestTest {
         assertEquals("Ladder x 3\n" + "Light Bulbs x 2",
                 testManifest1.toString());
 
-
+        // Manifest 2
         testManifest2.removeProduct(p4);
         assertEquals("Weedkiller x 2\n" + "Hammer x 1\n" +
                 "Saw x 9", testManifest2.toString());
-
         testManifest2.removeProduct(p5);
         assertEquals("Weedkiller x 2\n" + "Hammer x 1\n" +
                 "Saw x 9", testManifest2.toString());
+
+        // Manifest 3
+        testManifest3.removeProduct(p2);
+        assertEquals("Saw x 1\n" +
+                "Ladder x 9\n" +
+                "Nails x 2\n" +
+                "Weedkiller x 20", testManifest3.toString());
+        testManifest3.removeProduct(p6);
+        assertEquals("Saw x 1\n" +
+                "Ladder x 9\n" +
+                "Nails x 2\n" +
+                "Weedkiller x 19", testManifest3.toString());
     }
 
 
@@ -93,27 +105,34 @@ public class ManifestTest {
      */
     @Test
     public void getTotalWeight() {
-
+        //Manifest 1
         assertEquals(62, testManifest1.getTotalWeight(), 0);
+        //Manifest 2
         assertEquals(57, testManifest2.getTotalWeight(), 0);
+        //Manifest 3
         assertEquals(197, testManifest3.getTotalWeight(), 0);
-
     }
 
 
-
+    /**
+     * Testing of getHeaviestUnder method of Manifest Class.
+     */
     @Test
     public void getHeaviestUnder() {
 
     }
 
-
+    /**
+     * testing of hasFragileItems method of Manifest Class.
+     */
     @Test
     public void hasFragileItems() {
 
     }
 
-
+    /**
+     * Testing of hasHazardousItems method of Manifest Class.
+     */
     @Test
     public void hasHazardousItems() {
 

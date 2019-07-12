@@ -25,6 +25,7 @@ public class Manifest {
         byWeight = new TreeSet<>(new ProductWeightComparator());
     }
 
+
     /**
      * Add Product: Adds products to initial manifest list
      * Then called by Box class, adds products to each box with new manifest instance
@@ -35,6 +36,7 @@ public class Manifest {
 
         if (quantities.containsKey(p)) {
             quantities.put(p,quantities.get(p)+quantity);
+
             //print to check list
             //System.out.println("\n product added, quantities:" + quantities.toString());
 
@@ -50,6 +52,7 @@ public class Manifest {
             }
         }
     }
+
 
     /**
      * Remove Product: Reduces quantity of product by 1 once packed
@@ -110,6 +113,7 @@ public class Manifest {
         return null;
     }
 
+
     /**
      * Returns true if manifest is empty and all items packed
      * @return true or false
@@ -117,6 +121,7 @@ public class Manifest {
     public boolean isEmpty() {
         return byWeight.isEmpty();
     }
+
 
     /**
      * Result String: Returns a string list of products and quantities
@@ -137,6 +142,7 @@ public class Manifest {
         return result.substring(0, result.length()-1);
     }
 
+
     /**
      * Fragile Items: Returns true if the box has fragile products, otherwise false
      * @return true or false
@@ -149,6 +155,7 @@ public class Manifest {
         }
         return false;
     }
+
 
     /**
      * Hazardous Items: Returns true if the box has hazardous items, otherwise false

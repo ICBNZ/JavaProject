@@ -13,10 +13,10 @@ public class Box {
 
 
     /**
-     * Box: box being packed
-     * @param customer
-     * @param depot
-     * @param capacity
+     * Box which is packed with products from the manifest
+     * @param customer the Customer whose manifest is being packed
+     * @param depot the depot that is packing the boxes from the manifest
+     * @param capacity the capacity of the box
      */
     public Box(Customer customer, Depot depot, Integer capacity) {
         this.customer = customer;
@@ -27,8 +27,10 @@ public class Box {
 
 
     /**
-     * Get Label:
-     * @return the box packing label
+     * Get Label: returns string of the box packing label
+     * @return string including box capacity, closest of Customer addresses to depot,
+     * the products packed in the box, fragile or hazardous if containing such items,
+     * heavy label if over 15kg
      */
     public String getLabel() {
         StringBuilder label = new StringBuilder();
@@ -58,7 +60,7 @@ public class Box {
 
 
     /**
-     *
+     * To String: Returns box label
      * @return the label
      */
     public String toString() {
@@ -76,8 +78,9 @@ public class Box {
 
 
     /**
-     * Add Product: Checks product weight with canFit then adds
-     * 1 of the product to box
+     * Add Product: Checks product weight with canFit method, then if under capacity
+     * calls the manifest add product method with quantity of 1 which is added to the
+     * box
      * @param product the product being packed
      */
     public void addProduct(Product product) {

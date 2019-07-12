@@ -53,7 +53,6 @@ public class PackerTest {
         testManifest1.addProduct(p1, 1);
 
         List<Box> results1 = Packer.packProducts(customer1, testDepot1, testManifest1, 20);
-        System.out.println("Packed Boxes1" + results1);
         assertTrue( results1.size() == 1);
         assertThat(results1.get(0).toString(), containsString(
                 "Capacity:20\n" +
@@ -75,7 +74,6 @@ public class PackerTest {
         testManifest2.addProduct(p3, 3);
 
         List<Box> results2 = Packer.packProducts(customer2, testDepot1, testManifest2, 20);
-        System.out.println("Packed Boxes2" + results2);
         assertTrue( results2.size() == 3);
 
         assertThat(results2.get(0).toString(), containsString(
@@ -121,10 +119,6 @@ public class PackerTest {
         testManifest3.addProduct(p6, 2); //2
 
         List<Box> results3 = Packer.packProducts(customer2, testDepot1, testManifest3, 15);
-        for(Box b : results3){
-            System.out.println("results 3:" + b);
-        }
-
         assertTrue(results3.get(0).toString().contains(
                 "Capacity:15\n" +
                         "Craig Smith\n" +
