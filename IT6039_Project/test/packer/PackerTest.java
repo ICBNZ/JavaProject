@@ -55,8 +55,7 @@ public class PackerTest {
         List<Box> results1 = Packer.packProducts(customer1, testDepot1, testManifest1, 20);
         assertTrue( results1.size() == 1);
         assertThat(results1.get(0).toString(), containsString(
-                "Capacity:20\n" +
-                        "Shaun Davis\n" +
+                "Shaun Davis\n" +
                         "321 Back St\n" +
                         "Christly\n" +
                         "Holly Oaks\n" +
@@ -77,8 +76,7 @@ public class PackerTest {
         assertTrue( results2.size() == 3);
 
         assertThat(results2.get(0).toString(), containsString(
-                "Capacity:20\n" +
-                        "Craig Smith\n" +
+                "Craig Smith\n" +
                         "55 Some St\n" +
                         "Somewhere\n" +
                         "Elsewhere\n" +
@@ -89,8 +87,7 @@ public class PackerTest {
                         "HEAVY"));
 
         assertThat(results2.get(1).toString(), containsString(
-                "Capacity:20\n" +
-                        "Craig Smith\n" +
+                "Craig Smith\n" +
                         "55 Some St\n" +
                         "Somewhere\n" +
                         "Elsewhere\n" +
@@ -101,8 +98,7 @@ public class PackerTest {
                         "HEAVY"));
 
         assertThat(results2.get(2).toString(), containsString(
-                "Capacity:20\n" +
-                        "Craig Smith\n" +
+                "Craig Smith\n" +
                         "55 Some St\n" +
                         "Somewhere\n" +
                         "Elsewhere\n" +
@@ -120,7 +116,6 @@ public class PackerTest {
 
         List<Box> results3 = Packer.packProducts(customer2, testDepot1, testManifest3, 15);
         assertTrue(results3.get(0).toString().contains(
-                "Capacity:15\n" +
                         "Craig Smith\n" +
                         "55 Some St\n" +
                         "Somewhere\n" +
@@ -129,7 +124,6 @@ public class PackerTest {
                         "Saw x 3"));
 
         assertTrue(results3.get(1).toString().contains(
-                "Capacity:15\n" +
                         "Craig Smith\n" +
                         "55 Some St\n" +
                         "Somewhere\n" +
@@ -141,7 +135,6 @@ public class PackerTest {
                         "FRAGILE"));
 
         assertFalse(results3.get(2).toString().contains(
-                "Capacity:15\n" +
                         "Craig Smith\n" +
                         "55 Some St\n" +
                         "Somewhere\n" +
@@ -151,7 +144,6 @@ public class PackerTest {
                         "FRAGILE"));
 
         assertTrue(results3.get(2).toString().contains(
-                "Capacity:15\n" +
                         "Craig Smith\n" +
                         "55 Some St\n" +
                         "Somewhere\n" +
