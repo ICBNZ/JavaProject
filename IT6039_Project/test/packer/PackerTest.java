@@ -17,7 +17,7 @@ public class PackerTest {
     Address depotAddress1 = new Address("111 Depot Rd", "Really", "Inn Town", "D444", new Coordinates(1102, 87));
     Depot testDepot1 = new Depot("Test Depot1", depotAddress1);
 
-    Address customerAddress1 = new Address("321 Back St", "Christly", "Holly Oaks", "C333", new Coordinates(112, 90));
+    Address customerAddress1 = new Address("321 Back St", "Campbell", "Holly Oaks", "C333", new Coordinates(112, 90));
     Address customerAddress2 = new Address("55 Some St", "Somewhere", "Elsewhere", "E555", new Coordinates(10, 100));
 
     Customer customer1 = new Customer("Shaun Davis", customerAddress1);
@@ -57,7 +57,7 @@ public class PackerTest {
         assertThat(results1.get(0).toString(), containsString(
                 "Shaun Davis\n" +
                         "321 Back St\n" +
-                        "Christly\n" +
+                        "Campbell\n" +
                         "Holly Oaks\n" +
                         "C333\n" +
                         "Ladder x 1\n" +

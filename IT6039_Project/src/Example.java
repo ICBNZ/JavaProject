@@ -23,6 +23,8 @@ import packer.Product;
 public class Example {
 
     /**
+     * Main method, prints Depot, Customer and Manifest, calls packing method
+     * and prints packed boxes and contents with packing labels.
      * @param args the command line arguments
      */
     public static void main(String[] args) {

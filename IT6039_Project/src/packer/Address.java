@@ -30,7 +30,7 @@ public class Address {
 
 
     /**
-     * To String method Returns string of address
+     * To String: Overrides toString method to return string of address
      * @return the street, suburb, city and postcode of the address
      */
     public String toString() {
@@ -43,11 +43,9 @@ public class Address {
 
 
     /**
-     * Get Co-ordinates
-     * @return the address coordinates
+     * Get Co-ordinates: the address coordinates
+     * @return x and y co-ordinates
      */
-    public Coordinates getCoordinates() {
-        return coordinates;
-    }
+    public Coordinates getCoordinates() { return coordinates; }
 
 }

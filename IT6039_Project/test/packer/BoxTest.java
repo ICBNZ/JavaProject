@@ -2,7 +2,7 @@ package packer;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
-import org.junit.BeforeClass;
+import org.junit.Before;
 
 /**
  *
@@ -14,8 +14,8 @@ public class BoxTest {
     Coordinates testCoordinates1 = new Coordinates(3,4);
     Coordinates testCoordinates2 = new Coordinates(30,100);
 
-    Address testAddress1 = new Address("1 First St", "", "Citadel City", "A111", testCoordinates1);
-    Address testAddress2 = new Address("10 Smith St", "", "Campbell City", "A242", testCoordinates2);
+    Address testAddress1 = new Address("1 First St", "Lyall", "Citadel City", "A111", testCoordinates1);
+    Address testAddress2 = new Address("10 Smith St", "Karori", "Smith City", "A242", testCoordinates2);
 
     Customer testC1 = new Customer("Sally Perry", testAddress1);
     Customer testC2 = new Customer("Sarah Kate", testAddress2);
@@ -25,15 +25,54 @@ public class BoxTest {
 
     Product p1 = new Product("Saw", 4, true, false);
     Product p2 = new Product("Ladder", 10, true, false);
-    Product p3 = new Product("Product1", 22, false, false);
-    Product p4 = new Product("Toolbox", 6, true, false);
-    Product p5 = new Product("LightBulbs", 2, false, true);
+    Product p3 = new Product("Level", 5, false, false);
+    Product p4 = new Product("Tape Measure", 1, true, false);
+    Product p5 = new Product("Hammer", 16, true, false);
+    Product p6 = new Product("LightBulbs", 30, false, true);
 
-    Box b1 = new Box(testC1, testD1, 20);
-    Box b2 = new Box(testC2, testD1, 30);
+    private Box testBox1;
+    private Box testBox2;
+    private Box testBox3;
+    private Box testBox4;
 
-    @BeforeClass
-    public static void setUpClass() { System.out.println("Testing Box class...");
+    @Before
+    public void setUpClass() { System.out.println("Testing Box class...");
+
+        testBox1 = new Box(testC1, testD1, 20);
+        testBox1.addProduct(p1);
+        testBox1.addProduct(p2);
+
+        testBox2 = new Box(testC2, testD1, 25);
+        testBox2.addProduct(p2);
+        testBox2.addProduct(p4);
+
+        testBox3 = new Box(testC2, testD1, 20);
+        testBox3.addProduct(p1);
+
+        testBox4 = new Box(testC2, testD1, 30);
+
+    }
+
+
+    /**
+     * Testing of addProduct method of Box class.
+     */
+    @Test
+    public void addProduct() {
+
+        System.out.println("Add Product");
+
+        assertTrue(testBox1.getLabel().contains(p1.getName()));
+        assertTrue(testBox1.getLabel().contains(p2.getName()));
+        assertFalse(testBox1.getLabel().contains(p3.getName()));
+
+        assertTrue(testBox2.getLabel().contains(p2.getName()));
+        assertTrue(testBox2.getLabel().contains(p4.getName()));
+        assertFalse(testBox2.getLabel().contains(p1.getName()));
+
+        assertTrue(testBox3.getLabel().contains(p1.getName()));
+        assertFalse(testBox3.getLabel().contains(p4.getName()));
+        assertFalse(testBox3.getLabel().contains(p2.getName()));
 
     }
 
@@ -46,39 +85,43 @@ public class BoxTest {
 
         System.out.println("Can Fit");
 
-        b1.addProduct(p1);
-        assertTrue(b1.canFit(p1));
-        assertFalse(b1.canFit(p3));
-        assertTrue(b1.canFit(p4));
+        assertTrue(testBox1.canFit(p1));
+        assertTrue(testBox1.canFit(p4));
 
-        b2.addProduct(p1);
-        assertTrue(b1.canFit(p1));
-        assertFalse(b1.canFit(p3));
-        assertTrue(b1.canFit(p4));
+        assertTrue(testBox2.canFit(p3));
+        assertTrue(testBox2.canFit(p1));
+
+        assertTrue(testBox3.canFit(p2));
+        assertTrue(testBox3.canFit(p5));
+
+        assertTrue(testBox4.canFit(p3));
+        assertTrue(testBox4.canFit(p6));
 
     }
 
     /**
-     * Testing of addProduct method of Box class.
+     * Testing of remainingCapacity method of Box class.
      */
     @Test
-    public void addProduct() {
+    public void testRemainingCapacity() {
 
-        System.out.println("Add Product");
+        System.out.println("Remaining Capacity");
 
-        b1.addProduct(p1);
-        assertTrue(b1.getLabel().contains(p1.getName()));
-        b1.addProduct(p2);
-        assertTrue(b1.getLabel().contains(p2.getName()));
-        b1.addProduct(p3);
-        assertFalse(b1.getLabel().contains(p3.getName()));
+        assertEquals(6, testBox1.remainingCapacity(), 0);
+        testBox1.addProduct(p1);
+        assertEquals(2, testBox1.remainingCapacity(), 0);
 
-        b2.addProduct(p2);
-        assertTrue(b2.getLabel().contains(p2.getName()));
-        b2.addProduct(p4);
-        assertTrue(b2.getLabel().contains(p2.getName()));
-        b2.addProduct(p1);
-        assertTrue(b2.getLabel().contains(p2.getName()));
+        assertEquals(14, testBox2.remainingCapacity(), 0);
+        testBox2.addProduct(p4);
+        assertEquals(13, testBox2.remainingCapacity(), 0);
+
+        assertEquals(16, testBox3.remainingCapacity(), 0);
+        testBox3.addProduct(p2);
+        assertEquals(6, testBox3.remainingCapacity(), 0);
+
+        assertEquals(30, testBox4.remainingCapacity(), 0);
+        testBox4.addProduct(p1);
+        assertEquals(26, testBox4.remainingCapacity(), 0);
 
     }
 
@@ -91,43 +134,21 @@ public class BoxTest {
 
         System.out.println("Get Weight");
 
-        b1.addProduct(p1);
-        assertEquals(4, b1.getWeight(), 0);
-        b1.addProduct(p2);
-        assertEquals(14, b1.getWeight(), 0);
-        b1.addProduct(p5);
-        assertEquals(16, b1.getWeight(), 0);
+        assertEquals(14, testBox1.getWeight(), 0);
+        testBox1.addProduct(p1);
+        assertEquals(18, testBox1.getWeight(), 0);
 
-        b2.addProduct(p4);
-        assertEquals(6, b2.getWeight(), 0);
-        b2.addProduct(p2);
-        assertEquals(16, b2.getWeight(), 0);
-        b2.addProduct(p1);
-        assertEquals(20, b2.getWeight(), 0);
+        assertEquals(11, testBox2.getWeight(), 0);
+        testBox2.addProduct(p3);
+        assertEquals(16, testBox2.getWeight(), 0);
 
-    }
+        assertEquals(4, testBox3.getWeight(), 0);
+        testBox3.addProduct(p4);
+        assertEquals(5, testBox3.getWeight(), 0);
 
-
-    /**
-     * Testing of remainingCapacity method of Box class.
-     */
-    @Test
-    public void testRemainingCapacity() {
-
-        System.out.println("Remaining Capacity");
-
-        b1.addProduct(p1);
-        b1.addProduct(p2);
-        assertEquals(6, b1.remainingCapacity(), 0);
-        b1.addProduct(p5);
-        assertEquals(4, b1.remainingCapacity(), 0);
-
-        b2.addProduct(p2);
-        b2.addProduct(p4);
-        assertEquals(14, b2.remainingCapacity(), 0);
-        b2.addProduct(p1);
-        assertEquals(10, b2.remainingCapacity(), 0);
-
+        assertEquals(0, testBox4.getWeight(), 0);
+        testBox4.addProduct(p2);
+        assertEquals(10, testBox4.getWeight(), 0);
     }
 
 }

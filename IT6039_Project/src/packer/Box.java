@@ -96,7 +96,7 @@ public class Box {
      * @return true or false
      */
     public boolean canFit(Product p) {
-        return p.getWeight() < capacity;
+        return p.getWeight() <= capacity;
     }
 
 
