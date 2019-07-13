@@ -46,42 +46,31 @@ public class Customer {
 
 
     /**
-     * Closest Address To: Gets the Customer's closest address to the depot
+     * Closest Address To: Compares all Customer addresses and finds
+     * the closest address to the depot
      * @param d Depot
-     * @return bestAddress: closest Customer address
+     * @return bestAddress - Closest Customer address to depot
      */
     public Address getClosestAddressTo(Depot d) {
-
-        //System.out.println("\nDepot:" + d );
 
         double bestDistance = Double.MAX_VALUE;
         Address bestAddress = null;
 
-        // loop address list
-        for (Address a : addresses) {
-
-            // companyDistanceTo - co-ordinates method
-            // for each address: get co-ordinates, get distance to depot
-            //(Address.getCo).companyDistanceTo(depot co-ordinates)
+        for (Address a : addresses) {   // loop address list
             double distance = a.getCoordinates().companyDistanceTo(d.getCoordinates());
-            //System.out.println("\nAddress distance:" + distance);
 
-            //compare distances
-            if (distance < bestDistance) {
-
+            if (distance < bestDistance) {  //compare distances
                 bestAddress = a;
                 bestDistance = distance;
-                //System.out.println("Best Distance:\n" + bestAddress + "Best d:\n" + bestDistance);
             }
         }
-
-        //System.out.println("\nBEST:" + bestAddress);
         return bestAddress;
     }
 
+
     /**
-     * Customer name
-     * @return name
+     * To String: Overrides toString method to return Customer name
+     * @return Customer name
      */
     public String toString() {
         return this.getName();

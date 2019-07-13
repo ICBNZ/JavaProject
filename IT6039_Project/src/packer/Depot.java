@@ -20,7 +20,7 @@ public class Depot {
 
 
     /**
-     * Get Name:
+     * Get Name: Depot name
      * @return name
      */
     public String getName() {
@@ -29,8 +29,8 @@ public class Depot {
 
 
     /**
-     * Get Co-ordinates:
-     * @return co-ordinates of the address
+     * Get Co-ordinates: Depot Co-ordinates
+     * @return Co-ordinates of the address
      */
     public Coordinates getCoordinates() {
         return this.address.getCoordinates();
@@ -38,8 +38,8 @@ public class Depot {
 
 
     /**
-     * To String:
-     * @return name and address to string
+     * To String: Overrides toString method to return name and address
+     * @return Depot name and address to string
      */
     public String toString() {
         return

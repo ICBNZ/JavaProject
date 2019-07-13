@@ -25,7 +25,7 @@ public class Coordinates {
 
     /**
      * Euclidean Distance: Calculates euclidean distance between co-ordinates
-     * @param other
+     * @param other Co-ordinates
      * @return distance
      */
     public double euclideanDistanceTo(Coordinates other) {
@@ -48,11 +48,12 @@ public class Coordinates {
         return dist;
     }
 
+
     /**
      * Company Distance To: Calculates the euclidean and manhattan distances between co-ordinates
      * and finds average distance from Customer's address to Depot
-     * @param other
-     * @return average of both distances
+     * @param other Depot co-ordinates
+     * @return average of both calculated distances +1 as per proprietary distance metric
      */
     public double companyDistanceTo(Coordinates other) {
         double dist1 = euclideanDistanceTo(other);

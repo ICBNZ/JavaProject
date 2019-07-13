@@ -24,30 +24,26 @@ public class Packer {
 
         while (!m.isEmpty()) { // repeat until all items are packed
             if (b == null) {
-
-                //System.out.println("New Box"); // new box with new manifest
                 b = new Box(c, d, cap);
             }
 
-            // get heaviest item that will fit in remaining capacity
+            // Get heaviest product that will fit in remaining capacity
             Product prodToAdd = m.getHeaviestUnder(b.remainingCapacity());
 
             if (prodToAdd == null) {
-                packedBoxes.add(b);      // if no more products pack box
+                packedBoxes.add(b);          // If no more products fit pack box
                 b = null;
-
             }
+
             else {
-                b.addProduct(prodToAdd); // add product to box
-                m.removeProduct(prodToAdd);  // remove product from manifest
+                b.addProduct(prodToAdd);     // Add product to box
+                m.removeProduct(prodToAdd);  // Remove product from manifest
             }
         }
 
         if (b != null) {
-            packedBoxes.add(b);
+            packedBoxes.add(b);              // Add last packed box to list
         }
-            //System.out.println("Packed:" + packedBoxes);
-            return packedBoxes;
-
+            return packedBoxes;              // Return list of packed boxes.
     }
 }

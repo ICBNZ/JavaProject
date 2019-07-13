@@ -27,27 +27,19 @@ public class Manifest {
 
 
     /**
-     * Add Product: Adds products to initial manifest list
+     * Add Product: Adds products to initial manifest
      * Then called by Box class, adds products to each box with new manifest instance
      * @param p Product to be added
      * @param quantity Quantity of the product
      */
     public void addProduct(Product p, int quantity) {
-
         if (quantities.containsKey(p)) {
-            quantities.put(p,quantities.get(p)+quantity);
-
-            //print to check list
-            //System.out.println("\n product added, quantities:" + quantities.toString());
+            quantities.put(p, quantities.get(p)+ quantity);
 
         } else {
-
             quantities.put(p, quantity);
 
-            //print to check list
-            //System.out.println("\n product added, quantities:" + quantities.toString());
-
-            if (!byWeight.add(p)) {
+            if (!byWeight.add(p) && !byWeight.contains(p)) {
                 System.out.println("Couldn't add to Set");
             }
         }
@@ -63,23 +55,15 @@ public class Manifest {
         if (quantities.containsKey(p) && quantities.get(p) > 0) {
             quantities.put(p,quantities.get(p)-1); // update product quantity -1
 
-            // print to check items removed
-            //System.out.println("\nProduct removed weights" + byWeight.toString());
-            //System.out.println("\nRemoved 1 from quantity: " + p + quantities.toString());
          }
 
         if (quantities.get(p) == null) {  // if quantities is null
-            quantities.remove(p);  // remove product
-
-            // print to check product removed
-            //System.out.println("\nRemoved product: " + p + quantities.toString());
+            quantities.remove(p);         // remove product
 
         }
         if(quantities.containsKey(p) && quantities.get(p) == 0){
             byWeight.remove(p);
 
-            // print to check weights
-            //System.out.println("Weight one removed:"+ p + byWeight.toString());
         }
     }
 
@@ -93,8 +77,7 @@ public class Manifest {
             weight += (quantities.get(p) * p.getWeight());
 
         }
-        // print to check total weight
-        //System.out.println("total box weight:" + weight);
+
         return weight;
     }
 
@@ -106,7 +89,6 @@ public class Manifest {
     public Product getHeaviestUnder(double weight) {
         for (Product p : byWeight) {
             if (p.getWeight() <= weight) {
-                    //System.out.println("heaviest under(w/p):" + weight + p);
                 return p;
             }
         }

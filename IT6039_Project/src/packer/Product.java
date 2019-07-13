@@ -65,4 +65,12 @@ public class Product {
         return fragile;
     }
 
+
+    /**
+     * To String: Overrides the toString method to return name
+     * @return product name
+     */
+    public String toString() {
+        return this.getName();
+    }
 }

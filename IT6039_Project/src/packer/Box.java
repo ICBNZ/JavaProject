@@ -28,16 +28,16 @@ public class Box {
 
     /**
      * Get Label: returns string of the box packing label
-     * @return string including box capacity, closest of Customer addresses to depot,
-     * the products packed in the box, fragile or hazardous if containing such items,
-     * heavy label if over 15kg
+     * @return string including closest of Customer addresses to the depot,
+     * the products packed in the box, label if the box contains fragile or hazardous
+     * products and heavy label if over 15kg.
      */
     public String getLabel() {
         StringBuilder label = new StringBuilder();
 
         // print to test box capacity
-        label.append("Capacity:");
-        label.append(capacity);
+        //label.append("Capacity:");
+        //label.append(capacity);
 
         label.append("\n");
         label.append(customer);
@@ -50,10 +50,10 @@ public class Box {
             label.append("FRAGILE\n");   // Fragile
         }
         else if (this.isHazardous()) {
-            label.append("HAZARDOUS\n");   // Hazardous
+            label.append("HAZARDOUS\n"); // Hazardous
         }
         if (this.getWeight() > 15) {
-            label.append("HEAVY\n");   // Heavy
+            label.append("HEAVY\n");     // Heavy
         }
         return label.toString();
     }
@@ -69,8 +69,8 @@ public class Box {
 
 
     /**
-     * Get Weight: calls manifest method to get total weight
-     * @return the box total weight of contents
+     * Get Weight: Calls manifest method to get total weight of products in box
+     * @return the box total weight of contents of the box
      */
     public double getWeight() {
         return contents.getTotalWeight();
@@ -102,11 +102,14 @@ public class Box {
 
     /**
      * Remaining Capacity: Calculates remaining capacity in box
-     * @return
+     * by calling the getWeight method to return total weight of packed products
+     * then subtracting the result from the box capacity.
+     * @return Remaining weight to be filled under box capacity.
      */
     public double remainingCapacity() {
         return capacity - this.getWeight();
     }
+
 
     /**
      * Fragile: Returns true if product is fragile
