@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a85fb92-40cc-476b-aa2c-b087ff0077f5" name="Default Changelist" comment="Refactoring of BoxTest Class to add products in setup method">
+    <list default="true" id="6a85fb92-40cc-476b-aa2c-b087ff0077f5" name="Default Changelist" comment="ManifestTest: getHeaviestUnder, hasHazardousItems and hasFragileItems method testing added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Example.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Example.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packer/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/packer/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/packer/BoxTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/packer/BoxTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/packer/PackerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/packer/PackerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/packer/ManifestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/packer/ManifestTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +23,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/packer/Manifest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="34" column="53" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
+            <state relative-caret-position="-619">
+              <caret line="90" column="25" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
               <folding>
                 <element signature="e#2757#2758#0" expanded="true" />
                 <element signature="e#2798#2799#0" expanded="true" />
@@ -51,7 +48,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/packer/Address.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
+            <state relative-caret-position="242">
               <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
             </state>
           </provider>
@@ -60,7 +57,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Example.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
+            <state relative-caret-position="245">
               <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -72,7 +69,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/packer/Packer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="730">
+            <state relative-caret-position="968">
               <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -84,8 +81,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/packer/Box.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1942">
-              <caret line="106" column="55" selection-start-line="106" selection-start-column="55" selection-end-line="106" selection-end-column="55" />
+            <state relative-caret-position="814">
+              <caret line="37" column="37" lean-forward="true" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -99,23 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/packer/PackerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-160">
-              <caret line="64" column="34" lean-forward="true" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/packer/ManifestTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-364">
-              <caret line="34" column="39" lean-forward="true" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
+            <state relative-caret-position="123">
+              <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -123,11 +108,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/packer/BoxTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="101" column="7" lean-forward="true" selection-start-line="101" selection-start-column="7" selection-end-line="101" selection-end-column="7" />
+            <state relative-caret-position="140">
+              <caret line="96" column="40" lean-forward="true" selection-start-line="96" selection-start-column="40" selection-end-line="96" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -153,13 +138,11 @@
         <option value="$PROJECT_DIR$/test/packer/CoordinatesTest.java" />
         <option value="$PROJECT_DIR$/test/TestSuite.java" />
         <option value="$PROJECT_DIR$/test/packer/CustomerTest.java" />
-        <option value="$PROJECT_DIR$/test/packer/ManifestTest.java" />
         <option value="$PROJECT_DIR$/test/packer/AddressTest.java" />
         <option value="$PROJECT_DIR$/src/packer/ProductWeightComparator.java" />
         <option value="$PROJECT_DIR$/src/packer/Depot.java" />
         <option value="$PROJECT_DIR$/src/packer/Coordinates.java" />
         <option value="$PROJECT_DIR$/src/packer/Customer.java" />
-        <option value="$PROJECT_DIR$/src/packer/Box.java" />
         <option value="$PROJECT_DIR$/src/packer/Packer.java" />
         <option value="$PROJECT_DIR$/src/packer/Manifest.java" />
         <option value="$PROJECT_DIR$/test/packer/ProductTest.java" />
@@ -168,6 +151,8 @@
         <option value="$PROJECT_DIR$/src/Example.java" />
         <option value="$PROJECT_DIR$/test/packer/PackerTest.java" />
         <option value="$PROJECT_DIR$/test/packer/BoxTest.java" />
+        <option value="$PROJECT_DIR$/src/packer/Box.java" />
+        <option value="$PROJECT_DIR$/test/packer/ManifestTest.java" />
       </list>
     </option>
   </component>
@@ -245,7 +230,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Example">
+  <component name="RunManager" selected="JUnit.TestSuite">
     <configuration name="Example" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Example" />
       <module name="IT6039_Project" />
@@ -501,38 +486,45 @@
       <option name="project" value="LOCAL" />
       <updated>1562981109467</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Error in BoxTest: Product of same weight as capacity not added. Fix: Add &lt;= to canFit method in Box Class. Example, Address javadoc comments added.">
+      <created>1562988589420</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1562988589420</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestSuite - 2019.07.13 at 14h 50m 38s.xml">
+    <history-entry file="TestSuite - 2019.07.13 at 15h 42m 36s.xml">
       <configuration name="TestSuite" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSuite - 2019.07.13 at 14h 53m 43s.xml">
+    <history-entry file="TestSuite - 2019.07.13 at 15h 43m 16s.xml">
       <configuration name="TestSuite" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSuite - 2019.07.13 at 14h 53m 48s.xml">
+    <history-entry file="TestSuite - 2019.07.13 at 15h 43m 25s.xml">
       <configuration name="TestSuite" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSuite - 2019.07.13 at 14h 54m 02s.xml">
+    <history-entry file="TestSuite - 2019.07.13 at 15h 43m 35s.xml">
       <configuration name="TestSuite" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSuite - 2019.07.13 at 15h 02m 03s.xml">
+    <history-entry file="TestSuite - 2019.07.13 at 15h 43m 43s.xml">
       <configuration name="TestSuite" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSuite - 2019.07.13 at 15h 04m 37s.xml">
+    <history-entry file="TestSuite - 2019.07.13 at 15h 46m 09s.xml">
       <configuration name="TestSuite" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSuite - 2019.07.13 at 15h 05m 08s.xml">
+    <history-entry file="TestSuite - 2019.07.13 at 16h 04m 22s.xml">
       <configuration name="TestSuite" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSuite - 2019.07.13 at 15h 20m 38s.xml">
+    <history-entry file="TestSuite - 2019.07.13 at 16h 06m 12s.xml">
       <configuration name="TestSuite" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSuite - 2019.07.13 at 15h 21m 02s.xml">
+    <history-entry file="TestSuite - 2019.07.13 at 16h 06m 25s.xml">
       <configuration name="TestSuite" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestSuite - 2019.07.13 at 15h 21m 41s.xml">
+    <history-entry file="TestSuite - 2019.07.13 at 16h 06m 33s.xml">
       <configuration name="TestSuite" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -558,7 +550,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.07744565" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2771739" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4995752" weight="0.8777174" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -566,7 +558,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32880434" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5004248" side_tool="true" weight="0.95516306" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32880434" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.15081522" />
+      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.4347826" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -578,8 +570,6 @@
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Box, Manifest, Packer Classes:&#10;Box: Remove duplicate addProduct methods, Change amounts from 40 to 20 - Box limit of 20kg not 40&#10;Manifest: Add Bracket to end of file&#10;Packer: Add console prints to check outputs, change new Box to (c,d), remove duplicate packedBoxes.add(b) method if box is not null" />
-    <MESSAGE value="Box, Manifest, Product Classes:&#10;Box: change getWeight method to call getTotalWeight&#10;Manifest: Add console prints to check list updates, Remove duplicate addProduct methods, remove product method change == 0 to null&#10;Product: change return of isHazardous method to return hazardous variable" />
     <MESSAGE value="Box, Manifest Classes:&#10;Manifest: Change getTotalWeight to find sum (+=), addProduct method: * to + for quantity, add hasHazardousItems() method&#10;Box: Change isHazardous method to return hasHazardousItems, add if hazardous to getLabel method to add hazardous label if true." />
     <MESSAGE value="Manifest Class: Change removeMethod to if(quantities.containsKey(p) &amp;&amp; quantities.get(p) == 0) to only remove if quantity is 0, remove unused containsProduct method" />
     <MESSAGE value="Box Class: Change getLabel method to add Heavy label if weight over 15, remove unused duplicate canFit method. Remove console prints from classes" />
@@ -603,7 +593,9 @@
     <MESSAGE value="Product Class: Equals method to find if product is instance of removed as not required after refactoring, removed from ProductTest class also. Address, Box, Manifest, ProductWeightComparator, Product Classes: Fixing of javadoc comments" />
     <MESSAGE value="Remove printing checks and fix java doc comments for all classes, ProductTest: add further tests on second product, add overriding to string method in product class to allow for console printing and testing" />
     <MESSAGE value="Removal of capacity on box packing label in PackerTest and Box Class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removal of capacity on box packing label in PackerTest and Box Class." />
+    <MESSAGE value="Error in BoxTest: Product of same weight as capacity not added. Fix: Add &lt;= to canFit method in Box Class. Example, Address javadoc comments added." />
+    <MESSAGE value="ManifestTest: getHeaviestUnder, hasHazardousItems and hasFragileItems method testing added" />
+    <option name="LAST_COMMIT_MESSAGE" value="ManifestTest: getHeaviestUnder, hasHazardousItems and hasFragileItems method testing added" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/test/TestSuite.java">
@@ -682,13 +674,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/packer/Address.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/packer/Coordinates.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1254">
@@ -702,23 +687,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Example.java">
+    <entry file="file://$PROJECT_DIR$/test/packer/BoxTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+        <state relative-caret-position="140">
+          <caret line="96" column="40" lean-forward="true" selection-start-line="96" selection-start-column="40" selection-end-line="96" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/packer/Manifest.java">
+    <entry file="file://$PROJECT_DIR$/test/packer/PackerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="34" column="53" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
+        <state relative-caret-position="1124">
+          <caret line="64" column="34" lean-forward="true" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
           <folding>
-            <element signature="e#2757#2758#0" expanded="true" />
-            <element signature="e#2798#2799#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -732,18 +716,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/packer/Box.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1942">
-          <caret line="106" column="55" selection-start-line="106" selection-start-column="55" selection-end-line="106" selection-end-column="55" />
+        <state relative-caret-position="814">
+          <caret line="37" column="37" lean-forward="true" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/packer/Packer.java">
+    <entry file="file://$PROJECT_DIR$/src/Example.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="730">
-          <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
+        <state relative-caret-position="245">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/packer/Address.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -757,30 +748,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/packer/Packer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="968">
+          <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/packer/Manifest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-619">
+          <caret line="90" column="25" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
+          <folding>
+            <element signature="e#2757#2758#0" expanded="true" />
+            <element signature="e#2798#2799#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/packer/ManifestTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-364">
-          <caret line="34" column="39" lean-forward="true" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/packer/PackerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-160">
-          <caret line="64" column="34" lean-forward="true" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/packer/BoxTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="101" column="7" lean-forward="true" selection-start-line="101" selection-start-column="7" selection-end-line="101" selection-end-column="7" />
+        <state relative-caret-position="123">
+          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

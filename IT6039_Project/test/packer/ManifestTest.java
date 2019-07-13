@@ -120,7 +120,17 @@ public class ManifestTest {
     @Test
     public void getHeaviestUnder() {
 
+        assertEquals(p2, testManifest1.getHeaviestUnder(15));
+        assertEquals(p5, testManifest1.getHeaviestUnder(10));
+
+        assertEquals(p4, testManifest2.getHeaviestUnder(12));
+        assertEquals(p4, testManifest2.getHeaviestUnder(5));
+
+        assertEquals(p4, testManifest3.getHeaviestUnder(5));
+        assertEquals(p6, testManifest3.getHeaviestUnder(4));
+
     }
+
 
     /**
      * testing of hasFragileItems method of Manifest Class.
@@ -128,7 +138,11 @@ public class ManifestTest {
     @Test
     public void hasFragileItems() {
 
+        assertTrue(testManifest1.hasFragileItems());
+        assertFalse(testManifest2.hasFragileItems());
+        assertFalse(testManifest3.hasFragileItems());
     }
+
 
     /**
      * Testing of hasHazardousItems method of Manifest Class.
@@ -136,8 +150,9 @@ public class ManifestTest {
     @Test
     public void hasHazardousItems() {
 
+        assertFalse(testManifest1.hasHazardousItems());
+        assertTrue(testManifest2.hasHazardousItems());
+        assertTrue(testManifest3.hasHazardousItems());
+
     }
-
-
-
 }
