@@ -152,5 +152,71 @@ public class BoxTest {
         assertEquals(10, testBox4.getWeight(), 0);
     }
 
+
+    /**
+     * Testing of getLabel method of Box class
+     */
+    @Test
+    public void testGetLabel() {
+
+        System.out.println("Get Label");
+
+        assertEquals("\n" +
+                "Sally Perry\n" +
+                "1 First St\n" +
+                "Lyall\n" +
+                "Citadel City\n" +
+                "A111\n" +
+                "Saw x 1\n" +
+                "Ladder x 1\n" +
+                "HAZARDOUS", testBox1.getLabel());
+
+        assertEquals("\n" +
+                "Sarah Kate\n" +
+                "10 Smith St\n" +
+                "Karori\n" +
+                "Smith City\n" +
+                "A242\n" +
+                "Ladder x 1\n" +
+                "Tape Measure x 1\n" +
+                "HAZARDOUS", testBox2.getLabel());
+
+        testBox2.addProduct(p3);
+        assertEquals("\n" +
+                "Sarah Kate\n" +
+                "10 Smith St\n" +
+                "Karori\n" +
+                "Smith City\n" +
+                "A242\n" +
+                "Ladder x 1\n" +
+                "Tape Measure x 1\n" +
+                "Level x 1\n" +
+                "HAZARDOUS\n" +
+                "HEAVY", testBox2.getLabel());
+
+
+        assertEquals("\n" +
+                "Sarah Kate\n" +
+                "10 Smith St\n" +
+                "Karori\n" +
+                "Smith City\n" +
+                "A242\n" +
+                "Saw x 1\n" +
+                "HAZARDOUS", testBox3.getLabel());
+        testBox3.addProduct(p2);
+        testBox3.addProduct(p1);
+        assertEquals("\n" +
+                "Sarah Kate\n" +
+                "10 Smith St\n" +
+                "Karori\n" +
+                "Smith City\n" +
+                "A242\n" +
+                "Saw x 2\n" +
+                "Ladder x 1\n" +
+                "HAZARDOUS\n" +
+                "HEAVY", testBox3.getLabel());
+
+    }
+
 }
 
