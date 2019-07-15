@@ -16,20 +16,20 @@ import org.junit.BeforeClass;
  * @author bunta
  */
 public class CoordinatesTest {
-    
+
     // If distances are in km, then results can be off by up to 1m
     public static final double ACCEPTABLE_DELTA = 0.001;
-    
+
     // Test data
     Coordinates testCoordinates1 = new Coordinates(0,0);
     Coordinates testCoordinates2 = new Coordinates(30,40);
     Coordinates testCoordinates3 = new Coordinates(1000, 2000);
-    
+
     @BeforeClass
     public static void setUpClass() {
         System.out.println("Testing Coordinates class...");
     }
-    
+
     /**
      * Test of getX method, of class Coordinates.
      */
@@ -60,7 +60,7 @@ public class CoordinatesTest {
         System.out.println("euclideanDistanceTo");
         assertEquals(50.0, testCoordinates1.euclideanDistanceTo(testCoordinates2), ACCEPTABLE_DELTA);
         assertEquals(2236.0679, testCoordinates1.euclideanDistanceTo(testCoordinates3), ACCEPTABLE_DELTA);
-        assertEquals(2186.8927, testCoordinates2.euclideanDistanceTo(testCoordinates3), ACCEPTABLE_DELTA);      
+        assertEquals(2186.8927, testCoordinates2.euclideanDistanceTo(testCoordinates3), ACCEPTABLE_DELTA);
     }
 
     /**
@@ -71,7 +71,7 @@ public class CoordinatesTest {
         System.out.println("manhattanDistanceTo");
         assertEquals(70.0, testCoordinates1.manhattanDistanceTo(testCoordinates2), ACCEPTABLE_DELTA);
         assertEquals(3000.0, testCoordinates1.manhattanDistanceTo(testCoordinates3), ACCEPTABLE_DELTA);
-        assertEquals(2930.0, testCoordinates2.manhattanDistanceTo(testCoordinates3), ACCEPTABLE_DELTA); 
+        assertEquals(2930.0, testCoordinates2.manhattanDistanceTo(testCoordinates3), ACCEPTABLE_DELTA);
     }
 
     /**
@@ -84,5 +84,5 @@ public class CoordinatesTest {
         assertEquals(2619.0340, testCoordinates1.companyDistanceTo(testCoordinates3), ACCEPTABLE_DELTA);
         assertEquals(2559.4464, testCoordinates2.companyDistanceTo(testCoordinates3), ACCEPTABLE_DELTA);
     }
-    
+
 }

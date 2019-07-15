@@ -28,7 +28,7 @@ public class BoxTest {
     Product p3 = new Product("Level", 5, false, false);
     Product p4 = new Product("Tape Measure", 1, true, false);
     Product p5 = new Product("Hammer", 16, true, false);
-    Product p6 = new Product("LightBulbs", 30, false, true);
+    Product p6 = new Product("Toolbox", 30, false, true);
 
     private Box testBox1;
     private Box testBox2;
@@ -98,6 +98,7 @@ public class BoxTest {
         assertTrue(testBox4.canFit(p6));
 
     }
+
 
     /**
      * Testing of remainingCapacity method of Box class.

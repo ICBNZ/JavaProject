@@ -53,16 +53,18 @@ public class PackerTest {
         testManifest1.addProduct(p1, 1);
 
         List<Box> results1 = Packer.packProducts(customer1, testDepot1, testManifest1, 20);
-        assertTrue( results1.size() == 1);
-        assertThat(results1.get(0).toString(), containsString(
-                "Shaun Davis\n" +
+        assertEquals(1, results1.size());
+
+        assertEquals("\n"+"Shaun Davis\n" +
                         "321 Back St\n" +
                         "Campbell\n" +
                         "Holly Oaks\n" +
                         "C333\n" +
                         "Ladder x 1\n" +
                         "Hammer x 1\n" +
-                        "HEAVY"));
+                        "HEAVY", results1.get(0).toString()
+                );
+
 
         // Packing Manifest 2
         Manifest testManifest2;
@@ -73,10 +75,9 @@ public class PackerTest {
         testManifest2.addProduct(p3, 3);
 
         List<Box> results2 = Packer.packProducts(customer2, testDepot1, testManifest2, 20);
-        assertTrue( results2.size() == 3);
+        assertEquals(3, results2.size());
 
-        assertThat(results2.get(0).toString(), containsString(
-                "Craig Smith\n" +
+        assertEquals("\n"+"Craig Smith\n" +
                         "55 Some St\n" +
                         "Somewhere\n" +
                         "Elsewhere\n" +
@@ -84,26 +85,24 @@ public class PackerTest {
                         "Ladder x 1\n" +
                         "Hammer x 1\n" +
                         "Nails x 2\n" +
-                        "HEAVY"));
+                        "HEAVY", results2.get(0).toString());
 
-        assertThat(results2.get(1).toString(), containsString(
-                "Craig Smith\n" +
-                        "55 Some St\n" +
-                        "Somewhere\n" +
-                        "Elsewhere\n" +
-                        "E555\n" +
-                        "Ladder x 1\n" +
-                        "Hammer x 1\n" +
-                        "Nails x 1\n" +
-                        "HEAVY"));
+        assertEquals("\n"+"Craig Smith\n" +
+                "55 Some St\n" +
+                "Somewhere\n" +
+                "Elsewhere\n" +
+                "E555\n" +
+                "Ladder x 1\n" +
+                "Hammer x 1\n" +
+                "Nails x 1\n" +
+                "HEAVY", results2.get(1).toString());
 
-        assertThat(results2.get(2).toString(), containsString(
-                "Craig Smith\n" +
-                        "55 Some St\n" +
-                        "Somewhere\n" +
-                        "Elsewhere\n" +
-                        "E555\n" +
-                        "Ladder x 1"));
+        assertEquals("\n"+"Craig Smith\n" +
+                "55 Some St\n" +
+                "Somewhere\n" +
+                "Elsewhere\n" +
+                "E555\n" +
+                "Ladder x 1", results2.get(2).toString());
 
 
         // Manifest 3
@@ -115,16 +114,16 @@ public class PackerTest {
         testManifest3.addProduct(p6, 2); //2
 
         List<Box> results3 = Packer.packProducts(customer2, testDepot1, testManifest3, 15);
-        assertTrue(results3.get(0).toString().contains(
-                        "Craig Smith\n" +
-                        "55 Some St\n" +
-                        "Somewhere\n" +
-                        "Elsewhere\n" +
-                        "E555\n" +
-                        "Saw x 3"));
+        assertEquals(3, results3.size());
 
-        assertTrue(results3.get(1).toString().contains(
-                        "Craig Smith\n" +
+        assertEquals("\n"+"Craig Smith\n" +
+                "55 Some St\n" +
+                "Somewhere\n" +
+                "Elsewhere\n" +
+                "E555\n" +
+                "Saw x 3", results3.get(0).toString());
+
+        assertEquals("\n"+"Craig Smith\n" +
                         "55 Some St\n" +
                         "Somewhere\n" +
                         "Elsewhere\n" +
@@ -132,25 +131,15 @@ public class PackerTest {
                         "Saw x 2\n" +
                         "Weedkiller x 2\n" +
                         "Light Bulbs x 1\n" +
-                        "FRAGILE"));
+                        "FRAGILE", results3.get(1).toString());
 
-        assertFalse(results3.get(2).toString().contains(
-                        "Craig Smith\n" +
-                        "55 Some St\n" +
-                        "Somewhere\n" +
-                        "Elsewhere\n" +
-                        "E555\n" +
-                        "Ladder x 2\n" +
-                        "FRAGILE"));
-
-        assertTrue(results3.get(2).toString().contains(
-                        "Craig Smith\n" +
-                        "55 Some St\n" +
-                        "Somewhere\n" +
-                        "Elsewhere\n" +
-                        "E555\n" +
-                        "Light Bulbs x 3\n" +
-                        "FRAGILE"));
+        assertEquals("\n"+"Craig Smith\n" +
+                "55 Some St\n" +
+                "Somewhere\n" +
+                "Elsewhere\n" +
+                "E555\n" +
+                "Light Bulbs x 3\n" +
+                "FRAGILE", results3.get(2).toString());
 
 
     }

@@ -8,10 +8,7 @@ package packer;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
-import packer.Address;
-import packer.Coordinates;
-import packer.Customer;
-import packer.Depot;
+
 
 /**
  *
@@ -46,28 +43,19 @@ public class CustomerTest {
     @Test
     public void testGetClosestAddressTo() {
 
-        // **** Maybe this should be broken int three tests.
         System.out.println("getClosestAddressTo");
         Customer testCustomer;
 
         // CUSTOMER 1
         testCustomer = new Customer("Test Customer", testAddress3);
-
-        System.out.println("Searching Add3");
         assertEquals(testAddress3, testCustomer.getClosestAddressTo(testDepot0));
         assertEquals(testAddress3, testCustomer.getClosestAddressTo(testDepot4));
-
-        // Add address to Customer's address list, search list
-        System.out.println("Searching Add 2 & Add 3");
         testCustomer.addAddress(testAddress2);
         assertEquals(testAddress2, testCustomer.getClosestAddressTo(testDepot0));
         assertEquals(testAddress3, testCustomer.getClosestAddressTo(testDepot4));
-
-        System.out.println("Searching Add 2, Add 3 & Add1");
         testCustomer.addAddress(testAddress1);
         assertEquals(testAddress1, testCustomer.getClosestAddressTo(testDepot0));
         assertEquals(testAddress3, testCustomer.getClosestAddressTo(testDepot4));
-
         testCustomer.addAddress(testAddress0);
         assertEquals(testAddress0, testCustomer.getClosestAddressTo(testDepot0));
         assertEquals(testAddress3, testCustomer.getClosestAddressTo(testDepot4));

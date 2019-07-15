@@ -38,22 +38,20 @@ public class Box {
         // print to test box capacity
         //label.append("Capacity:");
         //label.append(capacity);
-
         label.append("\n");
         label.append(customer);
         label.append("\n");
         label.append(customer.getClosestAddressTo(depot));
         label.append("\n");
         label.append(contents.toString());
-        label.append("\n");
         if (this.isFragile()) {
-            label.append("FRAGILE\n");   // Fragile
+            label.append("\nFRAGILE");   // Fragile
         }
         else if (this.isHazardous()) {
-            label.append("HAZARDOUS\n"); // Hazardous
+            label.append("\nHAZARDOUS"); // Hazardous
         }
         if (this.getWeight() > 15) {
-            label.append("HEAVY\n");     // Heavy
+            label.append("\nHEAVY");     // Heavy
         }
         return label.toString();
     }
